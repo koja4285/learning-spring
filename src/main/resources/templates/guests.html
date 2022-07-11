@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Guests</title>
+</head>
+<body>
+<h1>Welcome to the Guests Page</h1>
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Email address</td>
+        <td>Phone Number</td>
+    </tr>
+    <tr th:each="guests: ${guests}">
+        <td th:text="${guests.lastName}!=null? ${guests.lastName} + ', ' +
+        ${guests.firstName}: 'VACANT'">Name
+        </td>
+        <td th:text="${guests.emailAddress}">Email address</td>
+        <td th:text="${guests.phoneNumber}">Phone Number</td>
+    </tr>
+</table>
+
+</body>
+</html>
